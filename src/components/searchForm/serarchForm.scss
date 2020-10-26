@@ -1,0 +1,56 @@
+@import '../../styles/base/variables.scss';
+
+.content-search {
+  display: flex;
+  align-items: center;
+  & span {
+    font-size: 21px;
+    width: 200px;
+    font-weight: 600;
+  }
+  & .wrap {
+    position: relative;
+    display: flex;
+    min-width: 100px;
+    width: 100%;
+
+    .search-icon {
+      position: absolute;
+      top: 13px;
+      left: 8px;
+      width: 14px;
+    }
+    & input {
+      border-radius: 15px;
+      height: 40px;
+      width: 550px;
+      padding: 2px 23px 2px 30px;
+      outline: 0;
+      border: solid 1.5px $gs-gray-medium;
+      -webkit-transition: 1s; /* Safari */
+      transition: 1s;
+      &:hover {
+        box-shadow: 0 0 5pt 0.5pt $gs-gray-medium;
+      }
+      &:focus {
+        box-shadow: 0 0 5pt 2pt $gs-gray-medium;
+        outline-width: 0px;
+      }
+
+      // &::-webkit-search-cancel-button {
+      //   // -webkit-appearance: none;
+
+      //   /* Now your own custom styles */
+      //   // height: 10px;
+      //   // width: 10px;
+      //   // background-color: blue;
+      //   // background: red;
+      //   &::before {
+      //     content: 'X';
+
+      //     color: red;
+      //   }
+      // }
+    }
+  }
+}

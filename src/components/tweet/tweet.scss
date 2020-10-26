@@ -1,0 +1,64 @@
+@import '../../styles/base/variables.scss';
+
+.tweet-card {
+  position: relative;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.7em;
+  border-radius: 5px;
+  background-color: $gs-white;
+  border: 1px solid $gs-ligth-gray;
+  display: flex;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: ease box-shadow 0.3s;
+  width: 200px;
+
+  &:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  & .header {
+    display: flex;
+    gap: 1em;
+    border-bottom: 1px solid $gs-ligth-gray;
+    padding: 0.5em 0;
+
+    & img {
+      height: 100%;
+      object-fit: fill;
+      border-radius: 5px;
+    }
+
+    & .content-info-user {
+      display: flex;
+      flex-direction: column;
+
+      & .use-name {
+        font-size: 20px;
+        color: $gs-gray-dark;
+        font-weight: 400;
+      }
+
+      & .user-nick-name {
+        font-size: 14px;
+        color: $gs-ligth-gray;
+        font-weight: 400;
+        font-size: 14px;
+      }
+    }
+  }
+
+  & .content-text {
+    margin: 0.5em 0;
+    border-bottom: 1px solid $gs-ligth-gray;
+    color: $gs-gray;
+    font-size: 14px;
+  }
+
+  & .options {
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    color: $gs-black-medium;
+  }
+}
