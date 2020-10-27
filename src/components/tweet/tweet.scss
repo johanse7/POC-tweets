@@ -37,6 +37,11 @@
         font-size: 20px;
         color: $gs-gray-dark;
         font-weight: 400;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 120px;
+        display: inline-block;
       }
 
       & .user-nick-name {
@@ -53,6 +58,9 @@
     border-bottom: 1px solid $gs-ligth-gray;
     color: $gs-gray;
     font-size: 14px;
+    line-height: 1.5em;
+    height: 100px;
+    overflow: hidden;
   }
 
   & .options {

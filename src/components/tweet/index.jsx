@@ -5,24 +5,22 @@ import { TiArrowBack } from 'react-icons/ti';
 import { FaRetweet } from 'react-icons/fa';
 import { GrStar } from 'react-icons/gr';
 import './tweet.scss';
+import '../../styles/base/_animations.scss';
 
-export default function Tweet() {
-  const text = `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores quas molestias
-              dolores aperiam labore doloremque culpa vel obcaecati qui animi voluptatibus,
-              similique natus eum sint. Dolorum delectus ipsam dolore explicabo.`;
+export default function Tweet({ text, name, screen_name, profile_image, created_at }) {
   return (
     <>
       <main>
-        <section className='tweet-card'>
+        <section className='tweet-card fade-anima'>
           <div className='header'>
-            <img
-              src='
-           https://pbs.twimg.com/profile_images/1320544095471693826/G-LJ_Prv_normal.png'
-              alt='profile'
-            />
+            <img src={profile_image} alt='profile' />
             <div className='content-info-user'>
-              <span className='use-name'>elPajarito</span>
-              <span className='user-nick-name'>@tuitero</span>
+              <span className='use-name' title={name}>
+                {name}
+              </span>
+              <span className='user-nick-name' title={screen_name}>
+                {screen_name}
+              </span>
             </div>
           </div>
           <div className='content-text'>
@@ -34,7 +32,7 @@ export default function Tweet() {
             <GrStar />
           </div>
         </section>
-        <ViewMore text={text} />
+        <ViewMore text={text} created_at={created_at} />
       </main>
     </>
   );

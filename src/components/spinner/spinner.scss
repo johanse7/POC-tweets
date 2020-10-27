@@ -1,0 +1,50 @@
+@import '../../styles/base/variables.scss';
+
+.lds-ring {
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lds-ring div {
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 20px;
+  margin: 37px 10px 10px;
+  animation: 0.75s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0s infinite alternate none running
+    bouncer;
+}
+
+.lds-ring div:nth-child(5n + 1) {
+  background-color: $spinner-color_1;
+}
+.lds-ring div:nth-child(5n + 2) {
+  animation-delay: calc(0.1s);
+  background-color: $spinner-color_2;
+}
+.lds-ring div:nth-child(5n + 3) {
+  animation-delay: calc(0.2s);
+  background-color: $spinner-color_3;
+}
+.lds-ring div:nth-child(5n + 4) {
+  animation-delay: calc(0.2s);
+  background-color: $spinner-color_1;
+}
+.lds-ring div:nth-child(5n + 5) {
+  animation-delay: calc(0.4s);
+  background-color: $spinner-color_2;
+}
+
+@keyframes bouncer {
+  100% {
+    transform: scale(1.75) translateY(-20px);
+  }
+}
