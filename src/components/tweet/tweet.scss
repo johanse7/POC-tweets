@@ -1,4 +1,5 @@
 @import '../../styles/base/variables.scss';
+@import '../../styles/base/mixins.scss';
 
 .tweet-card {
   position: relative;
@@ -12,6 +13,12 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: ease box-shadow 0.3s;
   width: 200px;
+
+  @include respond-to(mobile-portrait) {
+    & {
+      width: unset;
+    }
+  }
 
   &:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3);

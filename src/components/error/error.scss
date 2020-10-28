@@ -1,0 +1,17 @@
+@import '../../styles/base/variables.scss';
+
+.error-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  margin-top: 3em;
+
+  & img {
+    width: 600px;
+    height: auto;
+    object-fit: cover;
+  }
+}

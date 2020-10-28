@@ -1,0 +1,15 @@
+.content-not-found {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  margin-top: 3em;
+
+  p {
+    color: #c2c2c2;
+    font-size: 80px;
+    margin: 0;
+  }
+}

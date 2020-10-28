@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+@import '../base/mixins.scss';
 
 body {
   font-family: 'Fira Sans', sans-serif;
@@ -16,6 +17,13 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 2em;
+
+  @include respond-to(mobile-portrait) {
+    & {
+      align-items: stretch;
+      gap: 1em;
+    }
+  }
 }
 
 .App-wrapper {
@@ -23,4 +31,10 @@ body {
   max-width: 90rem;
   margin: 0 auto;
   padding: 2em 0.5em;
+
+  @include respond-to(mobile-portrait) {
+    & {
+      padding: 1em 0;
+    }
+  }
 }

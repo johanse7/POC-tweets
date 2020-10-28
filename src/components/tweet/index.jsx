@@ -13,7 +13,7 @@ export default function Tweet({ text, name, screen_name, profile_image, created_
       <main>
         <section className='tweet-card fade-anima'>
           <div className='header'>
-            <img src={profile_image} alt='profile' />
+            <img src={profile_image} loading='lazy' alt='profile' />
             <div className='content-info-user'>
               <span className='use-name' title={name}>
                 {name}

@@ -15,3 +15,8 @@ export const getFormatDate = (date) => {
   });
   return `${time} - ${fullDate}`;
 };
+
+export const validInputSearch = (value) => {
+  const regex = new RegExp('^[a-zA-Z0-9 _!$.%^&*]{1,}$');
+  return regex.test(value);
+};
