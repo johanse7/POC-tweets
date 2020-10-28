@@ -1,4 +1,4 @@
-@import '../../styles/base/variables.scss';
+@import '../../styles/base/_mixins.scss';
 
 .error-detail {
   display: flex;
@@ -13,5 +13,13 @@
     width: 600px;
     height: auto;
     object-fit: cover;
+  }
+  @include respond-to(mobile-portrait) {
+    & {
+      align-items: flex-end;
+      & img {
+        width: 100%;
+      }
+    }
   }
 }
