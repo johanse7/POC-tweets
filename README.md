@@ -26,4 +26,4 @@ _Para iniciar la ejecución del proyecto en modo desarrollo se debe ejecutar el 
 ```
 npm run dev
 ```
-```
+
