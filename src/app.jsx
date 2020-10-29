@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import Home from './containers/home';
-import { NotificationContextProvider } from './context/notificationContext';
+import { ContextProvider } from './context/notificationContext';
 
 export default function App() {
   return (
-    <NotificationContextProvider>
+    <ContextProvider>
       <Home />
-    </NotificationContextProvider>
+    </ContextProvider>
   );
 }

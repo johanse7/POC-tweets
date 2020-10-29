@@ -1,9 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import { FiPaperclip } from 'react-icons/fi';
-import './notification.scss';
+import { AiOutlineCheckCircle } from 'react-icons/ai';
+import { VscError } from 'react-icons/vsc/';
 import Contex from '../../context/notificationContext';
+import './notification.scss';
 
-export default function Notification({ title, message, delay = 3000 }) {
+export default function Notification({ title, message, success, delay = 3000 }) {
   const { setNotification } = useContext(Contex);
 
   useEffect(() => {
@@ -17,7 +18,7 @@ export default function Notification({ title, message, delay = 3000 }) {
 
   return (
     <section className='content-notfication '>
-      <div className='notification'>
+      <div className={`notification ${!success ? `error-notify` : ''} `}>
         <div
           className='close-notification'
           role='button'
@@ -27,7 +28,7 @@ export default function Notification({ title, message, delay = 3000 }) {
           x
         </div>
         <div className='notification-title'>
-          <FiPaperclip />
+          {success ? <AiOutlineCheckCircle className='success' /> : <VscError className='error' />}
           {title}
         </div>
         <div className='notification-message'>{message}</div>

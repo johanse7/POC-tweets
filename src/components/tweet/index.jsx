@@ -7,6 +7,9 @@ import { GrStar } from 'react-icons/gr';
 import config from '../../config';
 import { useCopyToClipboard } from '../../utils/copyToClipboard';
 import Context from '../../context/notificationContext';
+import useFavoriteTweet from '../../hooks/useFavoriteTweet';
+import useRetweet from '../../hooks//useRetweet';
+import { ACTIONS_FAVORITE, ACTIONS_RETWEET } from '../../utils/constans';
 import './tweet.scss';
 import '../../styles/base/_animations.scss';
 
@@ -22,10 +25,32 @@ export default function Tweet({
 }) {
   const { setNotification } = useContext(Context);
 
+  const { favorite, setAction } = useFavoriteTweet({ favorited, id });
+  const { reTweet, setAction: seActionRetweet } = useRetweet({ retweeted, retweeted });
+
   const handleClickCopyTweet = () => {
     const urlTweet = `${config.urlGetTweet}/${id}`;
     const isCopy = useCopyToClipboard(urlTweet);
-    if (isCopy) setNotification({ title: 'Shared tweet', message: 'Copy to clipboard' });
+    if (!isCopy) {
+      setNotification({
+        title: 'Shared tweet',
+        message: 'Error copy to clipboard',
+        success: false,
+      });
+      return;
+    }
+
+    setNotification({ title: 'Shared tweet', message: 'Copy to clipboard', success: true });
+  };
+
+  const handleClickFavorite = () => {
+    const action = !favorite ? ACTIONS_FAVORITE.create : ACTIONS_FAVORITE.destroy;
+    setAction(action);
+  };
+
+  const handleClickRetweet = () => {
+    const action = !favorite ? ACTIONS_RETWEET.retweet : ACTIONS_RETWEET.unRetweet;
+    seActionRetweet(action);
   };
 
   return (
@@ -48,8 +73,14 @@ export default function Tweet({
           </div>
           <div className='options'>
             <TiArrowBack className='shared' onClick={handleClickCopyTweet} />
-            <FaRetweet className={`retweet ${retweeted ? 'selected' : ''}`} />
-            <GrStar className={`favorited ${favorited ? 'selected' : ''}`} />
+            <FaRetweet
+              className={`retweet ${reTweet ? 'selected' : ''}`}
+              onClick={handleClickRetweet}
+            />
+            <GrStar
+              className={`favorited ${favorite ? 'selected' : ''}`}
+              onClick={handleClickFavorite}
+            />
           </div>
         </section>
         <ViewMore text={text} created_at={created_at} />

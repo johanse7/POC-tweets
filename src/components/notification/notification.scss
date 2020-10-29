@@ -21,12 +21,27 @@
     animation: bottom-To-Top 1s alternate;
     border-left: 10px solid $color-third;
 
+    &.error-notify {
+      border-left: 10px solid $color-seventh;
+    }
+
     & .notification-title {
       font-weight: 900;
       font-weight: 900;
       display: flex;
       align-items: center;
       gap: 0.5em;
+
+      & svg {
+        font-size: 25px;
+
+        &.success {
+          color: $color-forth;
+        }
+        &.error {
+          color: $color-seventh;
+        }
+      }
     }
 
     & .notification-message {
