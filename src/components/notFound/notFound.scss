@@ -11,7 +11,7 @@
 
   p {
     color: #c2c2c2;
-    font-size: 80px;
+    font-size: 60px;
     margin: 0;
 
     @include respond-to(mobile-portrait) {

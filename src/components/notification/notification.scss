@@ -1,0 +1,53 @@
+@import '../../styles/base/variables.scss';
+@import '../../styles//base//animations.scss';
+@import '../../styles/base/_mixins.scss';
+
+.content-notfication {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  margin: auto;
+  z-index: 2;
+
+  & .notification {
+    position: relative;
+    box-sizing: border-box;
+    margin: 20px;
+    width: 300px;
+    height: 100px;
+    background-color: $gs-gray-white;
+    border-radius: 5px;
+    padding: 15px 10px;
+    animation: bottom-To-Top 1s alternate;
+    border-left: 10px solid $color-third;
+
+    & .notification-title {
+      font-weight: 900;
+      font-weight: 900;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+
+    & .notification-message {
+      margin-top: 1em;
+      font-size: 14px;
+    }
+
+    & .close-notification {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      cursor: pointer;
+    }
+  }
+
+  @include respond-to(mobile-portrait) {
+    & {
+      top: 0;
+      & .notification {
+        width: 330px;
+      }
+    }
+  }
+}

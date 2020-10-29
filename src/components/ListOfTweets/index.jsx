@@ -10,6 +10,7 @@ export default function ListOfTweets({ tweets = [] }) {
           ({ id, text, created_at, user: { name, screen_name, profile_image_url_https } }) => (
             <Tweet
               key={id}
+              id={id}
               text={text}
               name={name}
               screen_name={screen_name}

@@ -19,4 +19,22 @@
       }
     }
   }
+
+  @include respond-to(mobile-landscape) {
+    & {
+      padding: 0 1em;
+      & .grid-item-tweets {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  @include respond-to(handhelds) {
+    & {
+      padding: 0 1em;
+      & .grid-item-tweets {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
 }

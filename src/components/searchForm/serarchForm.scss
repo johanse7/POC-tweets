@@ -56,4 +56,36 @@
       }
     }
   }
+  @include respond-to(mobile-landscape) {
+    & {
+      flex-direction: row;
+      gap: 1em;
+      padding: 1em;
+
+      & span {
+        text-align: center;
+        font-size: 22px;
+      }
+
+      & .wrap input {
+        width: 100%;
+      }
+    }
+  }
+  @include respond-to(handhelds) {
+    & {
+      flex-direction: row;
+      gap: 1em;
+      padding: 1em;
+
+      & span {
+        text-align: center;
+        font-size: 20px;
+      }
+
+      & .wrap input {
+        width: 100%;
+      }
+    }
+  }
 }

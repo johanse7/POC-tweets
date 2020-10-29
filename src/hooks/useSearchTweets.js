@@ -16,12 +16,9 @@ export default function useSearchTweets(delaySearch = 600) {
         try {
           if (keyWord === refInput.current.value) {
             setLoading(true);
-            const { statuses, search_metadata } = await getTweetsByKeyWord(keyWord, urlNextResults);
+            const { statuses, search_metadata } = await getTweetsByKeyWord(keyWord);
+            setTweets(statuses);
             setLoading(false);
-            const storageUrl = localStorage.getItem(NEX_URL_RESULTS);
-
-            if (storageUrl) setTweets((prevState) => [...prevState, ...statuses]);
-            else setTweets(statuses);
 
             //save next URL
             localStorage.setItem(NEX_URL_RESULTS, search_metadata?.next_results);
@@ -33,7 +30,25 @@ export default function useSearchTweets(delaySearch = 600) {
         }
       }, delaySearch);
     })();
-  }, [keyWord, delaySearch, urlNextResults]);
+  }, [keyWord, delaySearch]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        if (!keyWord) return;
+
+        setLoading(true);
+        const { statuses, search_metadata } = await getTweetsByKeyWord(keyWord, urlNextResults);
+        setTweets((prevState) => [...prevState, ...statuses]);
+        setLoading(false);
+        localStorage.setItem(NEX_URL_RESULTS, search_metadata?.next_results);
+      } catch (error) {
+        setLoading(false);
+        setHasError(true);
+        console.error(error.toString());
+      }
+    })();
+  }, [urlNextResults]);
 
   return {
     setKeyWord,

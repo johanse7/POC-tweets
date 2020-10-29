@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ViewMore from './viewMore';
 import { reduceText } from '../../utils/';
 import { TiArrowBack } from 'react-icons/ti';
 import { FaRetweet } from 'react-icons/fa';
 import { GrStar } from 'react-icons/gr';
+import config from '../../config';
+import { useCopyToClipboard } from '../../utils/copyToClipboard';
+import Context from '../../context/notificationContext';
 import './tweet.scss';
 import '../../styles/base/_animations.scss';
 
-export default function Tweet({ text, name, screen_name, profile_image, created_at }) {
+export default function Tweet({ text, id, name, screen_name, profile_image, created_at }) {
+  const { setNotification } = useContext(Context);
+
+  const handleClickCopyTweet = () => {
+    const urlTweet = `${config.urlGetTweet}/${id}`;
+    const isCopy = useCopyToClipboard(urlTweet);
+    if (isCopy) setNotification({ title: 'Shared tweet', message: 'Copy to clipboard' });
+  };
+
   return (
     <>
       <main>
@@ -27,7 +38,7 @@ export default function Tweet({ text, name, screen_name, profile_image, created_
             <p>{reduceText(text, 100)}</p>
           </div>
           <div className='options'>
-            <TiArrowBack />
+            <TiArrowBack onClick={handleClickCopyTweet} />
             <FaRetweet />
             <GrStar />
           </div>
