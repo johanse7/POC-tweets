@@ -3,7 +3,7 @@
 
 ### Pre-requisitos 📋
 
-_Es necesario agregar variable de entorno en un archivo (.env) en la raiz del proyecto. 
+_Es necesario agregar las variables de entorno en un archivo (.env) en la raiz del proyecto. 
 
 ```
 URL_API_TWITTER = 
@@ -13,7 +13,7 @@ URL_GET_TWEET =
 ```
 ### Instalación 🔧
 
-_Se deberá instalar las dependecias por medio del comando:_
+_Instalar las dependecias por medio del comando:_
 
 ```
 npm install
