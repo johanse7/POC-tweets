@@ -78,6 +78,28 @@
 
     & > svg {
       cursor: pointer;
+
+      &.retweet {
+        &:hover {
+          color: $color-forth;
+        }
+        &.selected {
+          color: $color-forth;
+        }
+      }
+      &.favorited {
+        &:hover {
+          color: $color-sixth;
+        }
+        &.selected {
+          color: $color-sixth;
+        }
+      }
+      &.shared {
+        &:hover {
+          color: $color-fiveth;
+        }
+      }
     }
   }
 }

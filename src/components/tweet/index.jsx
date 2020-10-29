@@ -10,7 +10,16 @@ import Context from '../../context/notificationContext';
 import './tweet.scss';
 import '../../styles/base/_animations.scss';
 
-export default function Tweet({ text, id, name, screen_name, profile_image, created_at }) {
+export default function Tweet({
+  text,
+  id,
+  name,
+  screen_name,
+  profile_image,
+  created_at,
+  retweeted,
+  favorited,
+}) {
   const { setNotification } = useContext(Context);
 
   const handleClickCopyTweet = () => {
@@ -38,9 +47,9 @@ export default function Tweet({ text, id, name, screen_name, profile_image, crea
             <p>{reduceText(text, 100)}</p>
           </div>
           <div className='options'>
-            <TiArrowBack onClick={handleClickCopyTweet} />
-            <FaRetweet />
-            <GrStar />
+            <TiArrowBack className='shared' onClick={handleClickCopyTweet} />
+            <FaRetweet className={`retweet ${retweeted ? 'selected' : ''}`} />
+            <GrStar className={`favorited ${favorited ? 'selected' : ''}`} />
           </div>
         </section>
         <ViewMore text={text} created_at={created_at} />
