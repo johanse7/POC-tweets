@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import { postRetweet } from '../services/apitwitter';
-import Contex from '../context/notificationContext';
+import Contex from '../context/ContextApp';
 
 export default function useRetweet({ retweetInit, id }) {
   const [reTweet, setReTweet] = useState(retweetInit);
@@ -8,14 +8,12 @@ export default function useRetweet({ retweetInit, id }) {
   const { setNotification, setLoading } = useContext(Contex);
 
   useEffect(() => {
-    debugger;
     if (!action) return;
 
     (async () => {
       try {
         setLoading(true);
         const responseRetweet = await postRetweet({ action: action.name, id });
-        debugger;
         if (responseRetweet.errors)
           throw new Error(responseRetweet.errors.map(({ message }) => message).join(''));
 

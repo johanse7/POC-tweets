@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import { postFavoriteTweet } from '../services/apitwitter';
-import Contex from '../context/notificationContext';
+import Contex from '../context/ContextApp';
 
 export default function useFavoriteTweet({ favoritedInit, id }) {
   const [favorite, setFavorite] = useState(favoritedInit);
@@ -8,14 +8,13 @@ export default function useFavoriteTweet({ favoritedInit, id }) {
   const { setNotification, setLoading } = useContext(Contex);
 
   useEffect(() => {
-    debugger;
     if (!action) return;
 
     (async () => {
       try {
         setLoading(true);
         const responseFavorite = await postFavoriteTweet({ action: action.name, id });
-        debugger;
+
         if (responseFavorite.errors)
           throw new Error(responseFavorite.errors.map(({ message }) => message).join(''));
 

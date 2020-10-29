@@ -6,7 +6,7 @@ import { FaRetweet } from 'react-icons/fa';
 import { GrStar } from 'react-icons/gr';
 import config from '../../config';
 import { useCopyToClipboard } from '../../utils/copyToClipboard';
-import Context from '../../context/notificationContext';
+import Context from '../../context/ContextApp';
 import useFavoriteTweet from '../../hooks/useFavoriteTweet';
 import useRetweet from '../../hooks//useRetweet';
 import { ACTIONS_FAVORITE, ACTIONS_RETWEET } from '../../utils/constans';
@@ -26,7 +26,7 @@ export default function Tweet({
   const { setNotification } = useContext(Context);
 
   const { favorite, setAction } = useFavoriteTweet({ favorited, id });
-  const { reTweet, setAction: seActionRetweet } = useRetweet({ retweeted, retweeted });
+  const { reTweet, setAction: seActionRetweet } = useRetweet({ retweeted, id });
 
   const handleClickCopyTweet = () => {
     const urlTweet = `${config.urlGetTweet}/${id}`;

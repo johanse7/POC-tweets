@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { AiOutlineCheckCircle } from 'react-icons/ai';
 import { VscError } from 'react-icons/vsc/';
-import Contex from '../../context/notificationContext';
+import Contex from '../../context/ContextApp';
 import './notification.scss';
 
 export default function Notification({ title, message, success, delay = 3000 }) {

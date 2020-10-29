@@ -6,7 +6,7 @@ import NotFound from '../components/notFound';
 import useSearchTweets from '../hooks//useSearchTweets';
 import useNearScreen from '../hooks/useNearScreen';
 import Notification from '../components/notification';
-import Context from '../context/notificationContext';
+import Context from '../context/ContextApp';
 import Spinner from '../components/spinner';
 import debounce from 'just-debounce-it';
 import { validInputSearch } from '../utils';

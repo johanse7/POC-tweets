@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef, useContext } from 'react';
 import { getTweetsByKeyWord } from '../services/apitwitter';
-import Context from '../context/notificationContext';
+import Context from '../context/ContextApp';
 import { NEX_URL_RESULTS } from '../utils/constans';
 
 export default function useSearchTweets(delaySearch = 600) {
