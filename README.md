@@ -27,6 +27,6 @@ _Para iniciar la ejecución del proyecto en modo desarrollo se debe ejecutar el 
 npm run dev
 ```
 ```
-_yrl site: https://suspicious-babbage-9c2d28.netlify.app/
+url site: https://suspicious-babbage-9c2d28.netlify.app/
 ```
 
