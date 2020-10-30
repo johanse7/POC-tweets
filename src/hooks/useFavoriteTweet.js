@@ -27,6 +27,7 @@ export default function useFavoriteTweet({ favoritedInit, id }) {
       } catch (error) {
         setLoading(false);
         setNotification({ title: 'Like tweet', message: error.toString(), success: false });
+        setAction(null);
       }
     })();
   }, [action, id]);

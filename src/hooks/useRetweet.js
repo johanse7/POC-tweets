@@ -26,6 +26,7 @@ export default function useRetweet({ retweetInit, id }) {
       } catch (error) {
         setLoading(false);
         setNotification({ title: 'retweet', message: error.toString(), success: false });
+        setAction(null);
       }
     })();
   }, [action, id]);

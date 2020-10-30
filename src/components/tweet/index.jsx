@@ -58,7 +58,7 @@ export default function Tweet({
       <main>
         <section className='tweet-card fade-anima'>
           <div className='header'>
-            <img src={profile_image} loading='lazy' alt='profile' />
+            <img src={profile_image} className='fade-anima' loading='lazy' alt='profile' />
             <div className='content-info-user'>
               <span className='use-name' title={name}>
                 {name}
