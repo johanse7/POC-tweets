@@ -2,7 +2,7 @@ import config from '../config/';
 
 export const getTweetsByKeyWord = async (keyWord, nextResults = null) => {
   const response = await fetch(
-    `${config.urlApiTwitter}/search/tweets.json${
+    `${config.urlApiTwitter}/search/tweets.jso${
       nextResults || `?q=${keyWord}&count=${config.perPage}`
     } `,
     {

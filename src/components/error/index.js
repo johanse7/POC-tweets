@@ -1,5 +1,5 @@
 import React from 'react';
-import errorImage from '../../assets/errorPage.PNG';
+import errorImage from '../../assets/errorPage.png';
 import './error.scss';
 
 const Error = () => (
