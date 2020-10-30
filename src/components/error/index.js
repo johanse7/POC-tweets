@@ -5,7 +5,7 @@ import './error.scss';
 const Error = () => (
   <div className='error-detail'>
     {/* <img src={errorImage} alt='error' /> */}
-    <p>Error Server</p>
+    <p>Error server</p>
   </div>
 );
 
