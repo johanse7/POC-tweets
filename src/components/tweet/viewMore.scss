@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
 
   .view-more-section {
     background: $color-first;
@@ -21,6 +22,11 @@
     @include respond-to(mobile-portrait) {
       & {
         width: 280px;
+      }
+    }
+    @include respond-to(mobile-portrait-big) {
+      & {
+        width: 330px;
       }
     }
 

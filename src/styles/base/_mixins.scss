@@ -37,6 +37,12 @@
     }
   }
 
+  @if $media == mobile-portrait-big {
+    @media only screen and (min-width: 411px) and (max-width: $mobile) and (orientation: portrait) {
+      @content;
+    }
+  }
+
   @if $media == mobile-landscape {
     @media only screen and (min-width: 320px) and (max-width: $mobile-landscape) and (orientation: landscape) {
       @content;
