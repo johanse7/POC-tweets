@@ -67,3 +67,13 @@
 [1103/211754.041:ERROR:crash_report_database_win.cc(457)] unexpected header
 [1103/213304.704:ERROR:crash_report_database_win.cc(457)] unexpected header
 [1103/215309.615:ERROR:crash_report_database_win.cc(457)] unexpected header
+[1103/221026.949:ERROR:crash_report_database_win.cc(457)] unexpected header
+[1103/221043.808:ERROR:crash_report_database_win.cc(457)] unexpected header
+[1103/221900.779:ERROR:settings.cc(320)] Settings magic is not 1129342067
+[1103/221900.872:ERROR:crash_report_database_win.cc(457)] unexpected header
+[1103/222900.882:ERROR:crash_report_database_win.cc(457)] unexpected header
+[1103/222900.882:ERROR:directory_reader_win.cc(43)] FindFirstFile: El sistema no puede encontrar la ruta especificada. (0x3)
+[1103/222900.887:ERROR:crash_report_database_win.cc(457)] unexpected header
+[1103/222900.887:ERROR:crash_report_database_win.cc(457)] unexpected header
+[1103/223125.628:ERROR:crash_report_database_win.cc(457)] unexpected header
+[1103/223400.883:ERROR:crash_report_database_win.cc(457)] unexpected header
