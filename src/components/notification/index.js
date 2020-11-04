@@ -8,8 +8,7 @@ export default function Notification({ title, message, success, delay = 3000 }) 
   const { setNotification } = useContext(Contex);
 
   useEffect(() => {
-    const timeout = clearTimeout(timeout);
-    timeout = setTimeout(() => setNotification(null), delay);
+    const timeout = setTimeout(() => setNotification(null), delay);
     return () => clearTimeout(timeout);
   }, []);
 
