@@ -18,14 +18,14 @@ export default function useSearchTweets(delaySearch = 600) {
           if (keyWord === refInput.current.value) {
             setLoading(true);
             const { statuses, search_metadata, errors } = await getTweetsByKeyWord(keyWord);
-            debugger;
             if (errors) {
               console.error(errors);
               setHasError(true);
-              setLoacding(false);
+              setLoading(false);
               return;
             }
             setTweets(statuses);
+            setLoading(false);
             //save next URL
             localStorage.setItem(NEX_URL_RESULTS, search_metadata?.next_results);
           }
