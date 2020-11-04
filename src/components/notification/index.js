@@ -7,8 +7,10 @@ import './notification.scss';
 export default function Notification({ title, message, success, delay = 3000 }) {
   const { setNotification } = useContext(Contex);
 
+  let timeout;
   useEffect(() => {
-    const timeout = setTimeout(() => setNotification(null), delay);
+    clearTimeout(timeout);
+    timeout = setTimeout(() => setNotification(null), delay);
     return () => clearTimeout(timeout);
   }, []);
 
