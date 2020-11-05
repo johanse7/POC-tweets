@@ -8,7 +8,7 @@ export default function ListOfTweets({ tweets = [] }) {
       <div className='grid-item-tweets '>
         {tweets.map(
           ({
-            id,
+            id_str,
             text,
             created_at,
             favorited,
@@ -16,8 +16,8 @@ export default function ListOfTweets({ tweets = [] }) {
             user: { name, screen_name, profile_image_url_https },
           }) => (
             <Tweet
-              key={id}
-              id={id}
+              key={id_str}
+              id={id_str}
               text={text}
               name={name}
               screen_name={screen_name}
