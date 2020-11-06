@@ -1,11 +1,10 @@
 import React from 'react';
-// import errorImage from '../../assets/errorPage.png';
+import error from '../../assets/error.png';
 import './error.scss';
 
 const Error = () => (
   <div className='error-detail'>
-    {/* <img src={errorImage} alt='error' /> */}
-    <p>Error Server</p>
+    <img src={errorImage} alt='error' />
   </div>
 );
 
