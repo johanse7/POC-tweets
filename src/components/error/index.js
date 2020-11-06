@@ -4,7 +4,7 @@ import './error.scss';
 
 const Error = () => (
   <div className='error-detail'>
-    <img src={errorImage} alt='error' />
+    <img src={error} alt='error' />
   </div>
 );
 
