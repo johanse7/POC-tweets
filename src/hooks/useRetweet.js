@@ -13,15 +13,15 @@ export default function useRetweet({ retweetInit, id }) {
     (async () => {
       try {
         setLoading(true);
-        const responseRetweet = await postRetweet({ action: action.name, id });
-        if (responseRetweet.errors)
-          throw new Error(responseRetweet.errors.map(({ message }) => message).join(''));
+        const responseRetweet = await postRetweet({ id, retweet: action.value });
+        debugger;
+        if (responseRetweet.error)
+          throw new Error(responseRetweet.error?.allErrors.map(({ message }) => message).join(''));
 
-        const toggleRetweet = action.value;
-        setReTweet(toggleRetweet);
+        setReTweet(action.value);
         setLoading(false);
 
-        const message = toggleRetweet ? 'you did do retweet' : `you undo  retweet`;
+        const message = action.value ? 'you did do retweet' : `you undo  retweet`;
         setNotification({ title: 'retweet', message, success: true });
       } catch (error) {
         setLoading(false);

@@ -14,22 +14,24 @@ export const getTweetsByKeyWord = async (keyWord, nextResults = null) => {
   return await response.json();
 };
 
-export const postFavoriteTweet = async ({ action, id }) => {
-  const response = await fetch(`${config.urlApiTwitter}/favorites/${action}.json?id=${id}`, {
+export const postFavoriteTweet = async ({ id, like = false }) => {
+  const response = await fetch(`${config.urlProxy}/api/tweets/favorite`, {
     method: 'POST',
     headers: {
-      Authorization: `bearer ${config.token}`,
+      'Content-Type': 'application/json',
     },
+    body: JSON.stringify({ id, like }),
   });
   return await response.json();
 };
 
-export const postRetweet = async ({ action, id }) => {
-  const response = await fetch(`${config.urlApiTwitter}/statuses/${action}.json?id=${id}`, {
+export const postRetweet = async ({ id, retweet = false }) => {
+  const response = await fetch(`${config.urlProxy}/api/tweets/retweet`, {
     method: 'POST',
     headers: {
-      Authorization: `bearer ${config.token}`,
+      'Content-Type': 'application/json',
     },
+    body: JSON.stringify({ id, retweet }),
   });
   return await response.json();
 };

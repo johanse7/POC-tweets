@@ -4,11 +4,9 @@ export const NEX_URL_RESULTS = 'NEX_URL_RESULTS';
 
 export const ACTIONS_FAVORITE = {
   create: {
-    name: 'create',
     value: true,
   },
   destroy: {
-    name: 'destroy',
     value: false,
   },
 };

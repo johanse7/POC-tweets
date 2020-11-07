@@ -49,7 +49,8 @@ export default function Tweet({
   };
 
   const handleClickRetweet = () => {
-    const action = !favorite ? ACTIONS_RETWEET.retweet : ACTIONS_RETWEET.unRetweet;
+    debugger;
+    const action = !reTweet ? ACTIONS_RETWEET.retweet : ACTIONS_RETWEET.unRetweet;
     seActionRetweet(action);
   };
 
